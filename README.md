@@ -1,1 +1,1 @@
-# Merle Project Template 
+# MerleEcomm Project
