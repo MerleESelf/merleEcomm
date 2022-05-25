@@ -1,9 +1,9 @@
-const { DataTypes } = require("sequelize");
+const { Sequelize } = require("sequelize");
 const { db } = require("../index");
 
 const User = db.define('user', {
     email: {
-      type: DataTypes.STRING,
+      type: Sequelize.STRING,
       unique: true,
       allowNull: false,
       validate: {
@@ -11,22 +11,19 @@ const User = db.define('user', {
       }
     },
     password: {
-      type: DataTypes.STRING,
-      get() {
-        return () => this.getDataValue('password')
-      }
+      type: Sequelize.STRING,
     },
     // salt: {
-    //   type: DataTypes.STRING,
+    //   type: Sequelize.STRING,
     //   get() {
     //     return () => this.getDataValue('salt')
     //   }
     // },
     // googleId: {
-    //   type: DataTypes.STRING
+    //   type: Sequelize.STRING
     // },
     isAdmin: {
-      type: DataTypes.BOOLEAN,
+      type: Sequelize.BOOLEAN,
       defaultValue: false
     }
   })

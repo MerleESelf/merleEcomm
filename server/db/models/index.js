@@ -14,8 +14,10 @@ Plant.hasMany(cartDetail)
 cartDetail.belongsTo(Plant)
 
 module.exports = {
+    models: {
       User,
       Plant,
       Order,
       cartDetail
+    }
   }

@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize')
-const db = require('../db')
+const { db } = require("../index");
 
 const Plant = db.define('plant', {
   plantName: {
@@ -8,8 +8,7 @@ const Plant = db.define('plant', {
     unique: true
   },
   potSize: {
-    type: DataTypes.ENUM,
-    values: ['2"', '4"', '6"', '8"', '10"'],
+    type: DataTypes.DECIMAL,
     allowNull: false
   },
   care: {
