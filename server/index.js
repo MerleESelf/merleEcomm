@@ -1,14 +1,14 @@
 const morgan = require('morgan')
 const express = require('express');
 
-const PORT = 3001;
+const PORT = 3000;
 const app = express();
 
 app.use(morgan("tiny"));
 
-app.get("/", (req, res) => {
-    res.send({ message: 'Hello from Express!' });
-})
+// app.get("/", (req, res) => {
+//     res.send({ message: 'Hello from Express!' });
+// })
 
 // auth and api routes
 // app.use('/auth', require('./auth'))
