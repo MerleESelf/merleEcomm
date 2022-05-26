@@ -6,12 +6,12 @@ const app = express();
 
 app.use(morgan("tiny"));
 
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
     res.json({ message: 'Hello from Express!' });
 })
 
 // auth and api routes
-app.use('/auth', require('./auth'))
+// app.use('/auth', require('./auth'))
 app.use('/api', require('./api'))
 
 
@@ -25,5 +25,3 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
 });
-
- 
