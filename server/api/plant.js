@@ -1,15 +1,16 @@
-
-   
 const router = require('express').Router()
-const {Plant} = require('../db/models')
-module.exports = router
+const {models: { Plant } }  = require('../db/models')
+
 
 // get route for all plants
 router.get('/', async (req, res, next) => {
   try {
+    console.log('in plant api')
     const plants = await Plant.findAll()
-    res.json(plants)
+    res.send(plants)
   } catch (err) {
-    next(err)
+    console.log(err)
   }
 })
+
+module.exports = router
