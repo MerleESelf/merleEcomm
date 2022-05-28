@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import user from './user'
+import auth from './auth'
 import allPlants from './allPlants'
 
 
@@ -8,4 +8,4 @@ const store = configureStore({
 })
 
 export default store
-// export * from './user'
+export * from "./auth";
