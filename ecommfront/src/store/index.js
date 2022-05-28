@@ -1,11 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
-import auth from './auth'
-import allPlants from './allPlants'
+import authReducer from './authSlice'
+import plantsReducer from './plantsSlice'
 
 
 const store = configureStore({
-    reducer:{}
+    reducer:{
+        auth: authReducer, 
+        plants: plantsReducer
+    }
 })
 
 export default store
-export * from "./auth";
+export * from "./authSlice";
