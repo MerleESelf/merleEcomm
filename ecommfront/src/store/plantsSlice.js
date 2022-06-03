@@ -23,9 +23,6 @@ export const plantsSlice = createSlice({
         error: null
     },
     reducers: {
-        fetchPlants: (state, action) => {
-            state.value = action.payload
-        }
     },
     extraReducers(builder) {
         builder.addCase(getAllPlants.pending, (state, action) => {
@@ -45,6 +42,5 @@ export const plantsSlice = createSlice({
 
 
 
-export const { fetchPlants } = plantsSlice.actions
 export default plantsSlice.reducer
 
