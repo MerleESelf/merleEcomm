@@ -1,6 +1,5 @@
 const router = require('express').Router()
 
-
 //user api 
 router.use('/user', require('./user'))
 
