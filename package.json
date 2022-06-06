@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:client": "node client/src/index.js",
-    "start:client:dev": "nodemon client/src/index.js",
     "start:db": "node server/index.js",
     "start:db:dev": "nodemon server/index.js",
     "db:seed": "node script/seed.js",
-    "start": "npm run start:db && npm run start:client"
+    "start": "npm run start:db",
+    "start:client:dev": "npm run --prefix ./ecommfront start",
+    "start:dev": "npm run start:db:dev && npm run start:client:dev"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +22,7 @@
     "morgan": "^1.10.0",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
+    "react-router": "^6.3.0",
     "sequelize": "^6.19.2"
   },
   "devDependencies": {

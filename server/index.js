@@ -1,14 +1,26 @@
 const morgan = require('morgan')
 const express = require('express');
+const path = require('path')
 
-const PORT = 3000;
+const PORT = 8080;
 const app = express();
 
 app.use(morgan("tiny"));
 
-// app.get("/", (req, res) => {
-//     res.send({ message: 'Hello from Express!' });
+// static file-serving middleware
+app.use(express.static(path.join(__dirname, '..', 'public')))
+
+// app.get('/', (req, res)=>{
+//   res.send('Hello World')
 // })
+
+
+// sends index.html
+app.use('*', (req, res) => {
+  console.log("DIR NAME HERE",__dirname)
+  res.sendFile(path.join(__dirname, '..', 'public/index.html'));
+  
+})
 
 // auth and api routes
 app.use('/auth', require('./auth'))

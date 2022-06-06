@@ -35,6 +35,7 @@ export const fetchCompleteOrder = createAsyncThunk(
   "order/fetchCompleteOrder",
   async (orderDetails) => {
     try {
+      const {userId, orderId} = orderDetails
       const { data } = await axios.get(`/api/order/${userId}/${orderId}`);
       const order = data;
       return order;
@@ -65,6 +66,7 @@ export const editPlantQtyThunk = createAsyncThunk(
         `/api/order/${userId}/${orderId}/${plantId}`,
         plant
       );
+      return order
     } catch (error) {
       console.log(error);
     }
