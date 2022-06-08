@@ -1,17 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar"
+import Nav from "react-bootstrap/Nav"
+import Container from "react-bootstrap/Container"
 
-const Navbar = () => (
+const Navigation = () => (
   <div>
-    <h1>Plantrly</h1>
-    <nav>
-        <div>
-          <Link to="home">Home</Link>
-        </div>
-    </nav>
-    <hr />
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand>PLANTRLY</Navbar.Brand>
+        <Nav.Link href="/home">Home</Nav.Link>
+      </Container>
+    </Navbar>
   </div>
 );
 
 
-export default Navbar
+export default Navigation
