@@ -4,14 +4,12 @@ import Nav from "react-bootstrap/Nav"
 import Container from "react-bootstrap/Container"
 
 const Navigation = () => (
-  <div>
-    <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand>PLANTRLY</Navbar.Brand>
-        <Nav.Link href="/home">Home</Nav.Link>
-      </Container>
-    </Navbar>
-  </div>
+  <Navbar className="NavBar" bg="light" expand="lg">
+    <Container>
+      <Navbar.Brand className="NavBrand">PLANTRLY</Navbar.Brand>
+      <Nav.Link className="Navlink" href="/home">Home</Nav.Link>
+    </Container>
+  </Navbar>
 );
 
 
