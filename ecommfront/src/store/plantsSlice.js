@@ -6,7 +6,7 @@ export const getAllPlants = createAsyncThunk(
     'plants/getAllPlants',
     async () => {
         try {
-            const { data } = await axios.get('/api/plants')
+            const { data } = await axios.get('/api/plant')
             const plants = data
             return plants
         } catch (err) {
@@ -26,14 +26,14 @@ export const plantsSlice = createSlice({
     },
     extraReducers(builder) {
         builder.addCase(getAllPlants.pending, (state, action) => {
-            state.status = 'loading'
+            state.status = 'loading';
         })
         builder.addCase(getAllPlants.fulfilled, (state, action) => {
-            state.status = 'succeded'
-            return action.payload
+            state.status = 'succeded'; 
+            state.value = action.payload
         })
         builder.addCase(getAllPlants.rejected, (state, action) => {
-            state.status = 'failed'
+            state.status = 'failed'; 
             state.error = action.error.message
         })
 

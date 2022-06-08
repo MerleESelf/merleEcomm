@@ -7,20 +7,20 @@ const app = express();
 
 app.use(morgan("tiny"));
 
-// static file-serving middleware
-app.use(express.static(path.join(__dirname, '..', 'public')))
+// // static file-serving middleware
+// app.use(express.static(path.join(__dirname, '..', 'public')))
 
 // app.get('/', (req, res)=>{
 //   res.send('Hello World')
 // })
 
 
-// sends index.html
-app.use('*', (req, res) => {
-  console.log("DIR NAME HERE",__dirname)
-  res.sendFile(path.join(__dirname, '..', 'public/index.html'));
+// // sends index.html
+// app.use('*', (req, res) => {
+//   console.log("DIR NAME HERE",__dirname)
+//   res.sendFile(path.join(__dirname, '..', 'public/index.html'));
   
-})
+// })
 
 // auth and api routes
 app.use('/auth', require('./auth'))
