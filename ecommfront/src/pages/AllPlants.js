@@ -20,15 +20,15 @@ export const AllPlants = () => {
   })
 
   return (
-    <div>
-      <Row xs={2}>
-        {plants.map((plant) => (
-          <Col>
-            <PlantPreviewCard key={plant.id} plant={plant} />
-          </Col>
-        ))}
-      </Row>
-    </div>
+
+    <Row className="PlantRow" xs={2}>
+      {plants.map((plant) => (
+        <Col>
+          <PlantPreviewCard className="PlantPrevCard" key={plant.id} plant={plant} />
+        </Col>
+      ))}
+    </Row>
+
   )
 }
 
