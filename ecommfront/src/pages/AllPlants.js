@@ -22,14 +22,14 @@ export const AllPlants = () => {
 
   // loading state
   if (plants.status === "loading") {
-    return (<Spinner animation="grow" size="xl" />)
+    return (<Spinner className="loading" animation="grow" size="xl" />)
   }
 
   return (
     <Row className="PlantRow" xs={2}>
       {plants.value.map((plant) => (
-        <Col>
-          <PlantPreviewCard className="PlantPrevCard" key={plant.id} plant={plant} />
+        <Col className="PlantCol">
+          <PlantPreviewCard key={plant.id} plant={plant} />
         </Col>
       ))}
     </Row>
