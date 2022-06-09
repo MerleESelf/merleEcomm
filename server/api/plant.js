@@ -1,12 +1,19 @@
 const router = require('express').Router()
-const {models: { Plant } }  = require('../db/models')
+const { models: { Plant } } = require('../db/models')
 
 
 // get route for all plants
 router.get('/', async (req, res, next) => {
   try {
-    const plants = await Plant.findAll()
-    console.log('plaanntttssssss in api', plants)
+    const { page, limit } = req.query
+    const offset = limit * (page - 1)
+
+    const params = {}
+    if (page && limit) {
+      params.limit = limit
+      params.offset = offset
+    }
+    const plants = await Plant.findAll(params)
     res.send(plants)
   } catch (err) {
     console.log(err)
