@@ -14,12 +14,17 @@ router.get('/', async (req, res, next) => {
       params.limit = limit
       params.offset = offset
     }
-    if (total) {
-      const { count, rows } = await Plant.findAndCountAll(params)
-      return res.send({ count, rows })
-    }
-    const plants = await Plant.findAll(params)
-    res.send(plants)
+    // if (total) {
+    //   const { count, rows } = await Plant.findAndCountAll(params)
+    //   return res.send({ count, rows })
+    // }
+    // const plants = await Plant.findAll(params)
+
+    const plantData = total // if we want to conditionally return plant count (Ex. init All Plants page)
+      ? await Plant.findAndCountAll(params)
+      : await Plant.findAll(params)
+
+    res.send(plantData)
   } catch (err) {
     console.log(err)
   }
