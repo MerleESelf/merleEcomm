@@ -54,14 +54,14 @@ export const plantsSlice = createSlice({
             state.error = action.error.message
         })
         // reducers for get total plant count 
-        builder.addCase(getAllPlants.pending, (state) => {
+        builder.addCase(getTotalPlantCount.pending, (state) => {
             state.status = 'loading';
         })
-        builder.addCase(getAllPlants.fulfilled, (state, action) => {
+        builder.addCase(getTotalPlantCount.fulfilled, (state, action) => {
             state.status = 'succeded';
             state.valueCount = action.payload
         })
-        builder.addCase(getAllPlants.rejected, (state, action) => {
+        builder.addCase(getTotalPlantCount.rejected, (state, action) => {
             state.status = 'failed';
             state.error = action.error.message
         })
