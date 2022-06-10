@@ -14,6 +14,7 @@ router.get('/', async (req, res, next) => {
       params.limit = limit
       params.offset = offset
     }
+
     // if (total) {
     //   const { count, rows } = await Plant.findAndCountAll(params)
     //   return res.send({ count, rows })

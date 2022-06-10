@@ -43,3 +43,10 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/* .plantsTotal{
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  justify-content: right
+} */
