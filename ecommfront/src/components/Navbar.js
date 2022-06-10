@@ -7,7 +7,7 @@ const Navigation = () => (
   <Navbar className="NavBar" bg="light" expand="lg">
     <Container>
       <Navbar.Brand className="NavBrand">PLANTRLY</Navbar.Brand>
-      <Nav.Link className="Navlink" href="/home">Home</Nav.Link>
+      <Nav.Link className="Navlink" href="/plant">Home</Nav.Link>
     </Container>
   </Navbar>
 );
