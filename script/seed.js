@@ -1,20 +1,20 @@
-const { models: {User, Plant} }  = require("../server/db/models")
-const { db }  = require("../server/db");
+const { models: { User, Plant } } = require("../server/db/models")
+const { db } = require("../server/db");
 
 async function seed() {
     try {
         await db.sync({ force: true })
         console.log('db synced!')
 
-          const users = await Promise.all([
-            User.create({email: 'cody@email.com', password: '123'}),
-            User.create({email: 'murphy@email.com', password: '123'})
-          ])
+        const users = await Promise.all([
+            User.create({ email: 'cody@email.com', password: '123' }),
+            User.create({ email: 'murphy@email.com', password: '123' })
+        ])
 
         //plants
         await Plant.create({
             plantName: "fiddle leaf fig",
-            potSize: 10,           
+            potSize: 10,
             care: "keep in bright indirect light, water when dry",
             description: "Ficus lyrata, commonly known as the fiddle-leaf fig, is a species of flowering plant in the mulberry and fig family Moraceae. It is native to western Africa, from Cameroon west to Sierra Leone, where it grows in lowland tropical rainforest. It can grow up to 12–15 m tall",
             price: 15.99,
@@ -104,7 +104,7 @@ async function seed() {
         })
 
 
-        const Rip = await Plant.create({
+        await Plant.create({
             plantName: 'junlge catus',
             potSize: 4,
             care: 'keep in bright indirect light, water when dry',
@@ -114,7 +114,7 @@ async function seed() {
             image: 'https://hosting.photobucket.com/images/i/MerleSelf/IMG_1689.JPG'
         })
 
-        const Stolen = await Plant.create({
+        await Plant.create({
             plantName: 'mistletoe catus',
             potSize: 4,
             care: 'keep in bright indirect light, water when dry',
@@ -124,9 +124,7 @@ async function seed() {
             image: 'https://hosting.photobucket.com/images/i/MerleSelf/IMG_1754.JPG'
         })
 
-    
-
-        const whale = await Plant.create({
+        await Plant.create({
             plantName: 'whale fin',
             potSize: 4,
             care: 'keep in bright indirect light, water when dry',
@@ -136,7 +134,7 @@ async function seed() {
             image: 'https://hosting.photobucket.com/images/i/MerleSelf/IMG_1697_2.JPG'
         })
 
-        const cylindrical = await Plant.create({
+        await Plant.create({
             plantName: 'cylindrical snake plant',
             potSize: 4,
             care: 'keep in bright indirect light, water when dry',
@@ -146,7 +144,7 @@ async function seed() {
             image: 'https://hosting.photobucket.com/images/i/MerleSelf/IMG_1700.JPG'
         })
 
-        const Mikado = await Plant.create({
+        await Plant.create({
             plantName: 'mikado snake plant',
             potSize: 4,
             care: 'keep in bright indirect light, water when dry',
@@ -156,7 +154,7 @@ async function seed() {
             image: 'https://hosting.photobucket.com/images/i/MerleSelf/IMG_1702.JPG'
         })
 
-        const hearts = await Plant.create({
+        await Plant.create({
             plantName: 'string of hearts',
             potSize: 1,
             care: 'keep in bright indirect light, water when dry',
@@ -165,6 +163,340 @@ async function seed() {
             qty: 100,
             image: 'https://hosting.photobucket.com/images/i/MerleSelf/IMG_1706.JPG'
         })
+
+        await Plant.create({
+            plantName: 'tree fern',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+
+        await Plant.create({
+            plantName: 'Peperomia',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+
+        await Plant.create({
+            plantName: 'Orchid',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+
+        await Plant.create({
+            plantName: 'Cactus',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+
+        await Plant.create({
+            plantName: 'lithops',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+
+        await Plant.create({
+            plantName: 'maidenhair fern',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+
+        await Plant.create({
+            plantName: 'pothos',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+
+        await Plant.create({
+            plantName: 'Pink Princess',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+
+        await Plant.create({
+            plantName: 'Monstera',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+
+        await Plant.create({
+            plantName: ' sheet moss',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+
+        await Plant.create({
+            plantName: 'tilandsia',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+
+        await Plant.create({
+            plantName: 'begonia',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+
+        await Plant.create({
+            plantName: 'basil',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+        await Plant.create({
+            plantName: 'cat mint',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+        await Plant.create({
+            plantName: 'mint',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+        await Plant.create({
+            plantName: 'rosemary',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+        await Plant.create({
+            plantName: 'rose bush',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+        await Plant.create({
+            plantName: 'tomato',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+        await Plant.create({
+            plantName: 'peppers',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+        await Plant.create({
+            plantName: 'banana tree',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+        await Plant.create({
+            plantName: 'coffee plant',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+        await Plant.create({
+            plantName: 'green onion',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+        await Plant.create({
+            plantName: 'lavender',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+        await Plant.create({
+            plantName: 'bonsai',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+
+        await Plant.create({
+            plantName: 'spider plant',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+
+        await Plant.create({
+            plantName: 'milk thistle',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+
+        await Plant.create({
+            plantName: 'bob ',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+
+        await Plant.create({
+            plantName: 'drick',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+        await Plant.create({
+            plantName: 'chrus',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+        await Plant.create({
+            plantName: 'larry',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+        await Plant.create({
+            plantName: 'george',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+        await Plant.create({
+            plantName: 'mike',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+        await Plant.create({
+            plantName: 'derek',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+        await Plant.create({
+            plantName: 'kate',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+        await Plant.create({
+            plantName: 'smoke',
+            potSize: 6,
+            care: 'keep in bright indirect light, water when dry',
+            description: 'plant',
+            price: 15.99,
+            qty: 100,
+
+        })
+
+
 
         console.log(`seeded ${users.length} users`)
         console.log(`seeded successfully`)
@@ -187,4 +519,4 @@ async function seed() {
 // }
 
 
-seed(); 
+seed();

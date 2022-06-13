@@ -7,19 +7,11 @@ const app = express();
 
 app.use(morgan("tiny"));
 
-// // static file-serving middleware
-// app.use(express.static(path.join(__dirname, '..', 'public')))
 
-// app.get('/', (req, res)=>{
+
+
+// app.get('/', (req, res) => {
 //   res.send('Hello World')
-// })
-
-
-// // sends index.html
-// app.use('*', (req, res) => {
-//   console.log("DIR NAME HERE",__dirname)
-//   res.sendFile(path.join(__dirname, '..', 'public/index.html'));
-  
 // })
 
 // auth and api routes
@@ -36,5 +28,5 @@ app.use((err, req, res, next) => {
 
 
 app.listen(PORT, () => {
-    console.log(`Server listening on ${PORT}`);
+  console.log(`Server listening on ${PORT}`);
 });
