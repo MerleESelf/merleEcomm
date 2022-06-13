@@ -19,7 +19,6 @@ export const AllPlants = () => {
 
   // using use selector to 
   const plants = useSelector((state) => {
-    console.log(state.plants)
     return state.plants
   })
 
