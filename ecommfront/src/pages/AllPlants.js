@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getPlants, getTotalPlantCount } from "../store/plantsSlice"
 import { PlantPreviewCard } from "../components/PlantPreviewCard";
+import { ItemLimit } from "../components/ItemLimit";
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Spinner from "react-bootstrap/Spinner"
@@ -37,6 +38,7 @@ export const AllPlants = () => {
 
   return (
     <div>
+      <ItemLimit />
       <h3 className="shopPlantsHeader">Shop All Plants</h3>
       <span className="plantsTotal">{totalPlants} plants</span>
       <Row className="PlantRow" xs={2}>
