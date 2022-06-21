@@ -67,6 +67,7 @@ export const AllPlants = () => {
           <Button variant="secondary" value="10" onClick={(e) => handleClickLimit(e)}>10</Button>
           <Button variant="secondary" value="20" onClick={(e) => handleClickLimit(e)}>20</Button>
           <Button variant="secondary" value="30" onClick={(e) => handleClickLimit(e)}>30</Button>
+          <Button variant="secondary" value="" onClick={(e) => handleClickLimit(e)}>All</Button>
         </ButtonGroup>
       </div>
 
