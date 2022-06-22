@@ -3,10 +3,11 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 // thunk for plants via paginated api route 
 export const getPlants = createAsyncThunk(
-    'plants/getAllPlants',
+    'plants/getPlants',
     async (q) => {
         try {
-            const { data } = await axios.get(`/api/plant`)
+            console.log('in plants sliceeeeeee')
+            const { data } = await axios.get(`/api/plant${q}`)
             const plants = data
             return plants
         } catch (err) {
@@ -44,9 +45,11 @@ export const plantsSlice = createSlice({
     extraReducers(builder) {
         //reducers for all plants 
         builder.addCase(getPlants.pending, (state, action) => {
+            console.log('in loading state in slice ')
             state.status = 'loading';
         })
         builder.addCase(getPlants.fulfilled, (state, action) => {
+            console.log('in success state in slice ')
             state.status = 'succeded';
             state.value = action.payload
 
