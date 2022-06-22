@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col"
 import Spinner from "react-bootstrap/Spinner"
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
+import PaginationBar from "../components/PaginationBar";
 
 export const AllPlants = () => {
   // setting useDispatch hook to var 
@@ -49,6 +50,14 @@ export const AllPlants = () => {
     dispatch(getPlants(qStr))
   }
 
+  // change handler for changing page changes to be passed to paginationBar 
+  const handlePageChange = (childValue) => {
+    console.log(childValue)
+    setCurrentPage(childValue)
+    const qStr = formatQueryString(limit, childValue)
+    dispatch(getPlants(qStr))
+  }
+
   // loading state
   if (plants.status === "loading") {
     return (
@@ -64,10 +73,10 @@ export const AllPlants = () => {
       <div>
         <h4>Items Per Page:</h4>
         <ButtonGroup variant="secondary">
-          <Button variant="secondary" value="10" onClick={(e) => handleClickLimit(e)}>10</Button>
-          <Button variant="secondary" value="20" onClick={(e) => handleClickLimit(e)}>20</Button>
-          <Button variant="secondary" value="30" onClick={(e) => handleClickLimit(e)}>30</Button>
-          <Button variant="secondary" value="" onClick={(e) => handleClickLimit(e)}>All</Button>
+          <Button value="10" onClick={(e) => handleClickLimit(e)}>10</Button>
+          <Button value="20" onClick={(e) => handleClickLimit(e)}>20</Button>
+          <Button value="30" onClick={(e) => handleClickLimit(e)}>30</Button>
+          <Button value="" onClick={(e) => handleClickLimit(e)}>All</Button>
         </ButtonGroup>
       </div>
 
@@ -80,6 +89,19 @@ export const AllPlants = () => {
           </Col>
         ))}
       </Row>
+
+      {limit ?
+        <div>
+          <PaginationBar
+            totalPages={Math.ceil(calcPages(limit, totalPlants))}
+            curPage={currentPage}
+            nextPage={nextPage}
+            previousPage={previousPage}
+            changePage={handlePageChange}
+          />
+        </div>
+        : null}
+
     </div>
   )
 }
