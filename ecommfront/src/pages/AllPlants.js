@@ -42,6 +42,12 @@ export const AllPlants = () => {
     return state.plants.valueCount
   })
 
+  const pagesArr = []
+  const totalPages = Math.ceil(calcPages(limit, totalPlants))
+  for (let i = 1; i <= totalPages; i++) {
+    pagesArr.push(i)
+  }
+
   // on click for item limit change
   const handleClickLimit = (event) => {
     const newLimit = event.target.value
@@ -71,7 +77,8 @@ export const AllPlants = () => {
   return (
     <div>
       <div>
-        <h4>Items Per Page:</h4>
+        <p>Items Per Page:</p>
+        <p>page {currentPage}</p>
         <ButtonGroup variant="secondary">
           <Button value="10" onClick={(e) => handleClickLimit(e)}>10</Button>
           <Button value="20" onClick={(e) => handleClickLimit(e)}>20</Button>
@@ -93,7 +100,7 @@ export const AllPlants = () => {
       {limit ?
         <div>
           <PaginationBar
-            totalPages={Math.ceil(calcPages(limit, totalPlants))}
+            totalPages={pagesArr}
             curPage={currentPage}
             nextPage={nextPage}
             previousPage={previousPage}
