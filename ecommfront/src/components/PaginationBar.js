@@ -1,5 +1,6 @@
 import Pagination from 'react-bootstrap/Pagination'
 import React from 'react'
+import PaginationItem from './PaginationItem'
 
 const PaginationBar = (props) => {
   const { totalPages, curPage, nextPage, previousPage, changePage } = props
@@ -9,16 +10,10 @@ const PaginationBar = (props) => {
     const newPage = event.target.attributes[1].value
     changePage(newPage)
   }
-  let active = curPage
-  const isPageActive = (pageNum) => {
-    return active === pageNum ? true : false
-  }
-
   const pages = totalPages.map((pageNum) => {
     return (
-      <Pagination.Item value={pageNum} onClick={handleChange} key={pageNum}  >
-        {pageNum}
-      </Pagination.Item>)
+      <PaginationItem pageNum={pageNum} handleChange={handleChange} curPage={curPage} />
+    )
   })
 
   return (
@@ -29,3 +24,7 @@ const PaginationBar = (props) => {
 }
 
 export default PaginationBar
+
+// <Pagination.Item value={pageNum} onClick={handleChange} key={pageNum}  >
+// {pageNum}
+// </Pagination.Item>
