@@ -1,18 +1,22 @@
 import Pagination from 'react-bootstrap/Pagination'
+import PageItem from 'react-bootstrap/esm/PageItem';
 import React from 'react'
-import PageItem from 'react-bootstrap/esm/PageItem'
+import classnames from "classnames";
 
 const PaginationItem = (props) => {
-  const { pageNum, handleChange, curPage } = props
+  const { pageNum, handleChange, active } = props
 
-  let active = curPage
+  // const viewAllClassName = classnames({
+  //   active: !curPage
+  // });
 
-  console.log('cur active page in page item', active)
   return (
-    <Pagination.Item value={pageNum} onClick={handleChange} key={pageNum} active={active === pageNum ? true : false}  >
+    <PageItem value={pageNum} onClick={handleChange} key={pageNum} active={active === pageNum ? true : false}  >
       {pageNum}
-    </Pagination.Item>
+    </PageItem>
   )
 }
 
 export default PaginationItem
+
+// 
