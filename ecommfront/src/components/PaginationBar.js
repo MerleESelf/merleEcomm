@@ -28,7 +28,3 @@ const PaginationBar = (props) => {
 }
 
 export default PaginationBar
-
-// <Pagination.Item value={pageNum} onClick={handleChange} key={pageNum}  >
-// {pageNum}
-// </Pagination.Item>
