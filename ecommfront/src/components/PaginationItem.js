@@ -6,10 +6,6 @@ import classnames from "classnames";
 const PaginationItem = (props) => {
   const { pageNum, handleChange, active } = props
 
-  // const viewAllClassName = classnames({
-  //   active: !curPage
-  // });
-
   return (
     <PageItem value={pageNum} onClick={handleChange} key={pageNum} active={active === pageNum ? true : false}  >
       {pageNum}
@@ -18,5 +14,3 @@ const PaginationItem = (props) => {
 }
 
 export default PaginationItem
-
-// 
