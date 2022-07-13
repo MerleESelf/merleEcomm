@@ -58,7 +58,6 @@ export const AllPlants = () => {
 
   // change handler for changing page changes to be passed to paginationBar 
   const handlePageChange = (childValue) => {
-    console.log(childValue)
     setCurrentPage(childValue)
     const qStr = formatQueryString(limit, childValue)
     dispatch(getPlants(qStr))

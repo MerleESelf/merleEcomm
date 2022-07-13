@@ -8,6 +8,11 @@ export const PlantPreviewCard = (props) => {
 
   const [isShown, setIsShown] = useState(false)
 
+  // on click for quick shop button 
+  const handleClick = () => {
+    // on click present modal with all plant information and add to cart button
+  }
+
   return (
     <Card style={{ width: 250 }} className="PlantPrevCard" onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)}>
       <Card.Img className="PlantPrevImg" variant="top" src={plant.image} style={{ height: 100, width: 100 }} />

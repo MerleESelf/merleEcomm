@@ -50,3 +50,55 @@ body {
   align-items: right;
   justify-content: right
 } */
+
+#modal-container {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* vw and vh */
+  width: 100vw;
+  height: 95vh;
+  z-index: 2;
+
+  /*flex stuff below*/
+  display: flex;
+  /* alignment on the MAIN axis (default horizontal) */
+  justify-content: center;
+  /* alignment on the CROSS axis (default vertical) */
+  align-items: center;
+}
+
+#modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  width: 33vw;
+  height: 33vh;
+  background: #fff6f6;
+}
+/* 
+#rotoflo-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+
+}
+
+#rotoflo-modal input{
+background: transparent;
+border-top: none;
+border-left: none;
+border-right: none;
+border-bottom: solid #db4855;
+color: #db4855;
+align-items: center;
+justify-content: center;
+}
+#rotoflo-modal input:focus {
+  outline: none;
+} */
